@@ -63,7 +63,40 @@ public class LaraSamuelLabControl {
     
         else if(opcion==2){
             
+            int cantidad=0;
+            int contador=1;
+            double sumaNotas=0;
+            double nota=0;
+            double promedio=0;
+            double notaMayor=0;
+            double notaMenor=100;
             
+            System.out.print("Ingresar la cantidad de notas: ");
+            cantidad=lea.nextInt();
+            
+            while(contador<=cantidad){
+                System.out.println("Ingresar nota #"+contador+": ");
+                nota=lea.nextDouble();
+                
+                if(nota>=0&&nota<=100){
+                    contador+=1;
+                    sumaNotas+=nota;
+                    
+                    while(nota>notaMayor){
+                        notaMayor=nota;
+                    }
+                    
+                    while(nota<notaMenor){
+                        notaMenor=nota;
+                    }
+                    
+                    promedio=(sumaNotas/cantidad);
+                }
+            }
+            
+            System.out.println("Promedio: "+promedio+"%");
+            System.out.println("Nota mayor: "+notaMayor);
+            System.out.println("Nota menor: "+notaMenor);
             
         }else if(opcion==3){
             String fecha;
